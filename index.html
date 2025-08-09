@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Shop — Static E-Commerce</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="logo">SimpleShop</h1>
+        <nav class="nav">
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="cart">🛒 <span class="cart-count">0</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>Welcome to SimpleShop</h2>
+          <p>Quality essentials — clean design, fast checkout (static demo).</p>
+        </div>
+      </section>
+
+      <section class="products container" id="products">
+        <h3>Products</h3>
+        <div class="grid">
+          <!-- Product card 1 -->
+          <article class="card">
+            <img
+              src="https://via.placeholder.com/400x300?text=Blue+Shirt"
+              alt="Blue shirt"
+            />
+            <div class="card-body">
+              <h4 class="product-title">Blue Cotton Shirt</h4>
+              <p class="price">RWF 12,000</p>
+              <p class="rating">★★★★☆ (42)</p>
+              <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Product card 2 -->
+          <article class="card">
+            <img
+              src="https://via.placeholder.com/400x300?text=Sneakers"
+              alt="White sneakers"
+            />
+            <div class="card-body">
+              <h4 class="product-title">White Sneakers</h4>
+              <p class="price">RWF 28,500</p>
+              <p class="rating">★★★★★ (123)</p>
+              <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Product card 3 -->
+          <article class="card">
+            <img
+              src="https://via.placeholder.com/400x300?text=Watch"
+              alt="Classic watch"
+            />
+            <div class="card-body">
+              <h4 class="product-title">Classic Watch</h4>
+              <p class="price">RWF 45,000</p>
+              <p class="rating">★★★★☆ (67)</p>
+              <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Product card 4 -->
+          <article class="card">
+            <img
+              src="https://via.placeholder.com/400x300?text=Backpack"
+              alt="Travel backpack"
+            />
+            <div class="card-body">
+              <h4 class="product-title">Travel Backpack</h4>
+              <p class="price">RWF 18,200</p>
+              <p class="rating">★★★☆☆ (21)</p>
+              <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Product card 5 -->
+          <article class="card">
+            <img
+              src="https://via.placeholder.com/400x300?text=Headphones"
+              alt="Wireless headphones"
+            />
+            <div class="card-body">
+              <h4 class="product-title">Wireless Headphones</h4>
+              <p class="price">RWF 36,000</p>
+              <p class="rating">★★★★☆ (89)</p>
+              <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Product card 6 -->
+          <article class="card">
+            <img
+              src="https://via.placeholder.com/400x300?text=Coffee+Mug"
+              alt="Ceramic coffee mug"
+            />
+            <div class="card-body">
+              <h4 class="product-title">Ceramic Coffee Mug</h4>
+              <p class="price">RWF 3,200</p>
+              <p class="rating">★★★★★ (10)</p>
+              <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about container">
+        <h3>About this demo</h3>
+        <p>
+          This is a static HTML/CSS demo. Add simple JS to make the cart work or
+          wire it to a backend later.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> SimpleShop — Built for demo</p>
+      </div>
+    </footer>
+
+    <script>
+      // small script to update year and fake cart count on click (keeps it static & simple)
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const cartCountEl = document.querySelector(".cart-count");
+      let count = 0;
+      document.querySelectorAll(".add-to-cart").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          count += 1;
+          cartCountEl.textContent = count;
+          btn.textContent = "Added ✓";
+          btn.disabled = true;
+          btn.classList.add("added");
+        });
+      });
+    </script>
+  </body>
+</html>
